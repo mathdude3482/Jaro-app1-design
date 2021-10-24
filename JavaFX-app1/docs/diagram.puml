@@ -1,6 +1,31 @@
 @startuml
 class Application{
++ start
++ main
 }
 class FXMLController{
+- addFile(MenuItem)
+- date (label)
+- deleteFile(MenuItem)
+- description (label)
+- enterInfo(TextField)
+- enterInfo2(TextField)
+- enterInfo3(TextField)
+- information (label)
+- lists (label)
+- menuItem1 (MenuItem)
+- menuItem2 (MenuItem)
+- menuItem3 (MenuItem)
+- menuItem4 (Menu)
+- options (MenuButton)
+- pickDate (DatePicker)
+- pickDate2 (DatePicker)
+- pickDate3 (DatePicker)
++ buttonClicked (void)
++ chooseOption (void)
++ dateClicked (void)
++ infoEntered (void)
++ menuOptionClicked (void)
++ infoDeleted (void)
 }
 @enduml
