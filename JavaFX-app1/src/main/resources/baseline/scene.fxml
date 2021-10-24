@@ -1,34 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="baseline.FXMLController">
-    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="button" mnemonicParsing="false" onAction="#buttonClicked" text="Click me!" />
-            <Button fx:id="button2" mnemonicParsing="false" onAction="#buttonclick2" text="Confirm">
-               <HBox.margin>
-                  <Insets top="50.0" />
-               </HBox.margin>
-            </Button>
-            <VBox prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <ComboBox fx:id="myButton" minWidth="200.0" onAction="#buttonClicked" prefHeight="25.0" prefWidth="51.0" promptText="Here is an empty box!" VBox.vgrow="ALWAYS">
-                     <VBox.margin>
-                        <Insets bottom="50.0" left="89.0" right="50.0" top="50.0" />
-                     </VBox.margin>
-                  </ComboBox>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-        <Label fx:id="label" text="Welcome to my initial design!" />
-    </children>
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="menuitem1" mnemonicParsing="false" onAction="#menuOptionClicked" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem fx:id="menuitem2" mnemonicParsing="false" onAction="#menuOptionClicked" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="View">
+                  <items>
+                    <MenuItem fx:id="menuitem3" mnemonicParsing="false" onAction="#menuOptionClicked" text="About" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="menuitem4" mnemonicParsing="false" onAction="#menuOptionClicked" text="Help">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="What do I do?" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <left>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <Label fx:id="lists" text="Lists that are Available" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </top>
+               <bottom>
+                  <MenuButton fx:id="options" mnemonicParsing="false" onAction="#chooseOption" text="What would you like to do?" BorderPane.alignment="CENTER">
+                    <items>
+                      <MenuItem fx:id="addFile" mnemonicParsing="false" onAction="#buttonClicked" text="Add File" />
+                      <MenuItem fx:id="deleteFile" mnemonicParsing="false" onAction="#buttonClicked" text="Delete File" />
+                        <MenuItem fx:id="deleteFile" mnemonicParsing="false" onAction="#buttonClicked" text="Edit a Title" />
+                    </items>
+                  </MenuButton>
+               </bottom>
+               <center>
+                  <ListView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+         </left>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <Label fx:id="information" text="Information" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </top>
+               <center>
+                  <GridPane prefHeight="345.0" prefWidth="467.0" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="description" alignment="CENTER" text="Description" textAlignment="CENTER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="50.0" right="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="date" text="Due Date" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="50.0" right="25.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <DatePicker fx:id="pickDate" onAction="#dateClicked" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="pickDate2" onAction="#dateClicked" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <DatePicker fx:id="pickDate3" onAction="#dateClicked" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="enterInfo" onAction="#infoEntered" GridPane.rowIndex="1" />
+                        <TextField fx:id="enterInfo2" onAction="#infoEntered" GridPane.rowIndex="2" />
+                        <TextField fx:id="enterInfo3" onAction="#infoEntered" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
 </StackPane>

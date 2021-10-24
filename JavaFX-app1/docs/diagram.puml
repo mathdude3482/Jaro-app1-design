@@ -1,0 +1,6 @@
+@startuml
+class Application{
+}
+class FXMLController{
+}
+@enduml

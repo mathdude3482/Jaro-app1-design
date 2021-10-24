@@ -1,39 +1,67 @@
 package baseline;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 
-public class FXMLController implements Initializable {
+public class FXMLController {
+    //this class is used to control the GUI itself.
     @FXML
-    private Label label;
-
+    private MenuItem addFile;
     @FXML
-    private Button button;
-
+    private Label date;
     @FXML
-    private Button button2;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        String javaVersion = System.getProperty("java.version");
-        String javafxVersion = System.getProperty("javafx.version");
-    }
+    private MenuItem deleteFile;
     @FXML
-    private ComboBox<?> myButton;
-
+    private Label description;
+    @FXML
+    private TextField enterInfo;
+    @FXML
+    private TextField enterInfo2;
+    @FXML
+    private TextField enterInfo3;
+    @FXML
+    private Label information;
+    @FXML
+    private Label lists;
+    @FXML
+    private MenuItem menuitem1;
+    @FXML
+    private MenuItem menuitem2;
+    @FXML
+    private MenuItem menuitem3;
+    @FXML
+    private Menu menuitem4;
+    @FXML
+    private MenuButton options;
+    @FXML
+    private DatePicker pickDate;
+    @FXML
+    private DatePicker pickDate2;
+    @FXML
+    private DatePicker pickDate3;
     @FXML
     void buttonClicked(ActionEvent event) {
-        label.setText("Hi!");
+        //if a button from the Menu of buttons is picked, call a method based on what is chosen.
+        //if the user wants to add a list,
     }
     @FXML
-    void buttonclick2(ActionEvent event) {
-        label.setText("This creates a different message!");
+    void chooseOption(ActionEvent event) {
+    }
+    @FXML
+    void dateClicked(ActionEvent event) {
+    }
+    @FXML
+    void infoEntered(ActionEvent event) {
+    }
+
+    @FXML
+    void menuOptionClicked(ActionEvent event){
     }
 
 }
