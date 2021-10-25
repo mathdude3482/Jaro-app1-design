@@ -28,4 +28,11 @@ class FXMLController{
 + menuOptionClicked (void)
 + infoDeleted (void)
 }
+class Modify{
++AddList
++DeleteList
++EditTitle
++writeToFile
+}
+Modify -- FXMLController
 @enduml
